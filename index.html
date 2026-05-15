@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2026 Book Orbit</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <div id="scene-host" class="scene-host" aria-hidden="true"></div>
+
+      <section class="topbar" aria-label="2026 book search">
+        <div class="brand">
+          <span class="brand__year">2026</span>
+          <span class="brand__name">Book Orbit</span>
+        </div>
+
+        <form id="search-form" class="search" autocomplete="off">
+          <label class="sr-only" for="book-query">책 검색</label>
+          <span class="search__icon" aria-hidden="true"></span>
+          <input
+            id="book-query"
+            name="book-query"
+            type="search"
+            placeholder="책 제목 검색"
+            spellcheck="false"
+          />
+          <button id="clear-search" class="icon-button" type="button" aria-label="검색어 지우기">
+            <span aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <div class="counter" aria-live="polite">
+          <button id="lineup-toggle" class="counter__button counter__button--icon" type="button" aria-label="떠다니는 책 줄지어 보기" aria-pressed="false">
+            <span class="lineup-icon" aria-hidden="true"></span>
+          </button>
+          <button id="orbit-toggle" class="counter__button" type="button" aria-expanded="false" aria-controls="orbit-panel">
+            <strong id="orbit-count">0</strong> orbit
+          </button>
+          <button id="done-toggle" class="counter__button" type="button" aria-expanded="false" aria-controls="done-panel">
+            <strong id="done-count">0</strong> done
+          </button>
+        </div>
+      </section>
+
+      <section id="results-panel" class="results-panel" aria-live="polite" hidden>
+        <div id="results-status" class="results-status"></div>
+        <div id="results-list" class="results-list"></div>
+      </section>
+
+      <section id="orbit-panel" class="side-panel side-panel--left" aria-label="Orbit list" aria-hidden="true">
+        <header class="side-panel__header">
+          <h2>orbit</h2>
+          <span id="orbit-panel-count">0</span>
+        </header>
+        <div id="orbit-list" class="side-list"></div>
+      </section>
+
+      <section id="done-panel" class="side-panel side-panel--right" aria-label="Done list" aria-hidden="true">
+        <header class="side-panel__header">
+          <h2>done</h2>
+          <span id="done-panel-count">0</span>
+        </header>
+        <div id="done-list" class="side-list"></div>
+      </section>
+
+      <div id="complete-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal__backdrop" data-modal-close></div>
+        <div class="modal__panel">
+          <img id="modal-cover" class="modal__cover" alt="" />
+          <div class="modal__copy">
+            <p id="modal-kicker" class="modal__kicker">완독 확인</p>
+            <h2 id="modal-title"></h2>
+            <p id="modal-author" class="modal__author"></p>
+          </div>
+          <div class="modal__actions">
+            <button id="modal-cancel" class="text-button" type="button">아직</button>
+            <button id="modal-confirm" class="primary-button" type="button">완독</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "book-orbit",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check app.js && node --check server.js && node --check api/search.js && node --check api/image.js && node --check lib/book-api.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
