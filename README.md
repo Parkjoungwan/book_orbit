@@ -22,7 +22,7 @@ Book state is stored in the user's browser with `localStorage`.
 
 This project is ready for Vercel-style free hosting:
 
-- Static files are served from the project root.
+- Static files are served from `public/`.
 - `/api/search` and `/api/image` are implemented as Node functions in `api/`.
 - No database is required for user state because it stays in each user's browser.
 

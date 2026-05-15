@@ -4,7 +4,7 @@ const { readFile } = require("node:fs/promises");
 
 const PORT = Number(process.env.PORT || 4173);
 const HOST = "127.0.0.1";
-const ROOT = __dirname;
+const ROOT = join(__dirname, "..", "public");
 const MINUMSA_SEARCH_URL = "https://minumsa.com/";
 const IMAGE_CACHE = new Map();
 

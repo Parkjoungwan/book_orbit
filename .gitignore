@@ -1,3 +1,7 @@
 .codex/
+.vercel/
+__pycache__/
+*.pyc
+screen_blackout.pyw
 book-orbit-state.json
 qa-*-shot.png
